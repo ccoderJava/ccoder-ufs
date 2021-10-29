@@ -1,0 +1,8 @@
+# 应用名称
+spring:
+  application:
+    name: ccoder-ufs
+# 端口
+server:
+  port: 8080
+
