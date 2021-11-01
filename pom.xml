@@ -2,37 +2,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cc.ccoder</groupId>
-    <artifactId>ccoder-ufs</artifactId>
+    <groupId>cc.ccoder.ufs</groupId>
+    <artifactId>ufs-parent</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+
+    <modules>
+        <module>ufs-client-proxy</module>
+        <module>ufs-web</module>
+        <module>ufs-test</module>
+        <module>ufs-oss</module>
+        <module>ufs-common</module>
+    </modules>
+
     <name>ccoder-ufs</name>
-    <description>ccoder-ufs</description>
+    <description>OSS object storage service connects aliyun, qiniu, S3 and other cloud storage to provide unified and
+        abstract UFS services
+    </description>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+
+        <!--内部-->
+        <ccoder-common.version>1.0-SNAPSHOT</ccoder-common.version>
+
+        <!--外部-->
+
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -43,38 +43,41 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--内部-->
+            <dependency>
+                <groupId>cc.ccoder.ufs</groupId>
+                <artifactId>ufs-client-proxy</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.ccoder.ufs</groupId>
+                <artifactId>ufs-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.ccoder.ufs</groupId>
+                <artifactId>ufs-oss-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.ccoder.ufs</groupId>
+                <artifactId>ufs-oss-aliyun</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.ccoder.ufs</groupId>
+                <artifactId>ufs-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--依赖-->
+            <dependency>
+                <groupId>cc.ccoder</groupId>
+                <artifactId>ccoder-common</artifactId>
+                <version>${ccoder-common.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.3.7.RELEASE</version>
-                <configuration>
-                    <mainClass>cc.ccoder.ufs.CcoderUfsApplication</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>repackage</id>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>

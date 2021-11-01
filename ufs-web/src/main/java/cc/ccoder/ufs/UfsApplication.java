@@ -4,13 +4,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author chencong
+ * <p></p>
+ *
+ * @author congcong
+ * @email cong.ccoder@gmail.com
+ * @date UfsApplication.java v1.0  2021/11/1 14:09
  */
 @SpringBootApplication
-public class CcoderUfsApplication {
-
+public class UfsApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CcoderUfsApplication.class, args);
+        SpringApplication.run(UfsApplication.class, args);
     }
 
 }
