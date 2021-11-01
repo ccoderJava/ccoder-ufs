@@ -11,11 +11,20 @@
 
     <artifactId>ufs-common</artifactId>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
 
     <dependencies>
         <dependency>
             <groupId>cc.ccoder</groupId>
             <artifactId>ccoder-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
 

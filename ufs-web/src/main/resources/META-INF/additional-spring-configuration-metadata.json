@@ -1,0 +1,24 @@
+{
+    "properties": [
+        {
+            "name": "oss.aliyun.access-key-id",
+            "type": "java.lang.String",
+            "description": "Description for oss.aliyun.access-key-id."
+        },
+        {
+            "name": "oss.aliyun.access-key-secret",
+            "type": "java.lang.String",
+            "description": "Description for oss.aliyun.access-key-secret."
+        },
+        {
+            "name": "oss.aliyun.endpoint",
+            "type": "java.lang.String",
+            "description": "Description for oss.aliyun.endpoint."
+        },
+        {
+            "name": "oss.aliyun.internal-endpoint",
+            "type": "java.lang.String",
+            "description": "Description for oss.aliyun.internal-endpoint."
+        }
+    ]
+}

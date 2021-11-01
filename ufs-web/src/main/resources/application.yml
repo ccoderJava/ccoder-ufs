@@ -6,3 +6,10 @@ spring:
 server:
   port: 8080
 
+oss:
+  provider: aliyun
+  aliyun:
+    access-key-id: LTAIk84CQKnAtGyH
+    access-key-secret: w032qOSZoAIYM5lijORUFINSJAHXpj
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    internal-endpoint: oss-cn-shanghai-internal.aliyuncs.com

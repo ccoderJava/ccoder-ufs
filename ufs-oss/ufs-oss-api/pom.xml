@@ -13,11 +13,22 @@
     <artifactId>ufs-oss-api</artifactId>
     <description>The aliyun oss module of ufs project</description>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>cc.ccoder.ufs</groupId>
             <artifactId>ufs-common</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -14,6 +14,11 @@
 
     <name>ufs-web</name>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -22,6 +27,10 @@
         <dependency>
             <groupId>cc.ccoder.ufs</groupId>
             <artifactId>ufs-client-proxy</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cc.ccoder.ufs</groupId>
+            <artifactId>ufs-oss-aliyun</artifactId>
         </dependency>
     </dependencies>
 
@@ -42,6 +51,12 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
+                        </exclude>
+                    </excludes>
                     <mainClass>cc.ccoder.ufs.UfsApplication</mainClass>
                 </configuration>
                 <executions>

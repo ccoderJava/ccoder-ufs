@@ -22,15 +22,19 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+        <hibernate-validator.version>6.0.16.Final</hibernate-validator.version>
+        <guava.version>30.1.1-jre</guava.version>
 
         <!--内部-->
         <ccoder-common.version>1.0-SNAPSHOT</ccoder-common.version>
 
         <!--外部-->
-
+        <aliyun-sdk-oss.version>3.10.2</aliyun-sdk-oss.version>
     </properties>
 
 
@@ -76,6 +80,19 @@
                 <groupId>cc.ccoder</groupId>
                 <artifactId>ccoder-common</artifactId>
                 <version>${ccoder-common.version}</version>
+            </dependency>
+
+            <!--OSS依赖-->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-sdk-oss.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
         </dependencies>
