@@ -1,10 +1,11 @@
-package cc.ccoder.ufs.oss.integration;
+package cc.ccoder.ufs.oss.aliyun.integration;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Date;
 
+import cc.ccoder.ufs.oss.aliyun.factory.AliyunOssClientFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,6 @@ import cc.ccoder.ufs.oss.api.request.GetObjectUrlRequest;
 import cc.ccoder.ufs.oss.api.request.PutObjectRequest;
 import cc.ccoder.ufs.oss.api.response.GetObjectUrlResponse;
 import cc.ccoder.ufs.oss.api.response.PutObjectResponse;
-import cc.ccoder.ufs.oss.factory.AliyunOssClientFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
