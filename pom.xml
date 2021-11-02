@@ -34,6 +34,7 @@
 
         <!--外部-->
         <aliyun-sdk-oss.version>3.10.2</aliyun-sdk-oss.version>
+        <qiniu-java-sdk.version>7.7.0</qiniu-java-sdk.version>
     </properties>
 
 
@@ -82,6 +83,13 @@
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${aliyun-sdk-oss.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>${qiniu-java-sdk.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.google.guava</groupId>
