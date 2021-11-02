@@ -18,9 +18,15 @@ import java.util.Map;
 public class PutObjectRequest implements Serializable {
 
     private String bucket;
+
     private String ossPath;
+
     private File file;
+
     private Boolean forbidOverwrite;
+
     private Boolean encrypt;
+
     private Map<String, String> metaData;
+
 }

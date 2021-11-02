@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 
 import com.aliyun.oss.OSS;
+import com.aliyun.oss.model.OSSObject;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectResult;
 
@@ -16,6 +17,7 @@ import cc.ccoder.ufs.common.util.CaseFormatUtil;
 import cc.ccoder.ufs.oss.api.OssService;
 import cc.ccoder.ufs.oss.api.enums.BucketAccessEnum;
 import cc.ccoder.ufs.oss.api.enums.OssProviderEnm;
+import cc.ccoder.ufs.oss.api.request.GetObjectRequest;
 import cc.ccoder.ufs.oss.api.request.GetObjectUrlRequest;
 import cc.ccoder.ufs.oss.api.request.PutObjectRequest;
 import cc.ccoder.ufs.oss.api.response.GetObjectUrlResponse;
@@ -83,6 +85,27 @@ public class AliyunOssServiceImpl implements OssService {
             oss.shutdown();
         }
 
+    }
+
+    @Override
+    public void getObject(GetObjectRequest request) throws Exception {
+        OSS oss = aliyunOssClientFactory.create(false, Boolean.FALSE);
+        try {
+            log.info("aliyun oss getObject bucket:{},ossPath:{}", request.getBucket(), request.getOssPath());
+            OSSObject ossObject = oss.getObject(request.getBucket(), request.getOssPath());
+            log.info("aliyun oss getObject response requestID:{}", ossObject.getRequestId());
+            ObjectMetadata objectMetadata = ossObject.getObjectMetadata();
+
+            GetObjectRequest.CallbackContext context = new GetObjectRequest.CallbackContext();
+            context.setInputStream(ossObject.getObjectContent());
+            context.setRequest(request);
+            context.setContentType(objectMetadata.getContentType());
+            context.setContentDisposition(objectMetadata.getContentDisposition());
+            request.getCallback().process(context);
+            log.info("aliyun oss getObject callback complete");
+        } finally {
+            oss.shutdown();
+        }
     }
 
     @Override

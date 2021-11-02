@@ -26,10 +26,6 @@
         </dependency>
         <dependency>
             <groupId>cc.ccoder.ufs</groupId>
-            <artifactId>ufs-client-proxy</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cc.ccoder.ufs</groupId>
             <artifactId>ufs-oss-aliyun</artifactId>
         </dependency>
     </dependencies>

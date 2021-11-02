@@ -8,7 +8,6 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
-        <module>ufs-client-proxy</module>
         <module>ufs-web</module>
         <module>ufs-test</module>
         <module>ufs-oss</module>
@@ -49,11 +48,6 @@
             </dependency>
 
             <!--内部-->
-            <dependency>
-                <groupId>cc.ccoder.ufs</groupId>
-                <artifactId>ufs-client-proxy</artifactId>
-                <version>${project.version}</version>
-            </dependency>
             <dependency>
                 <groupId>cc.ccoder.ufs</groupId>
                 <artifactId>ufs-web</artifactId>

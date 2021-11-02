@@ -29,10 +29,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>cc.ccoder.ufs</groupId>
-            <artifactId>ufs-client-proxy</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>cc.ccoder.ufs</groupId>

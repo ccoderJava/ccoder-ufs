@@ -1,6 +1,7 @@
 package cc.ccoder.ufs.oss.api;
 
 import cc.ccoder.common.template.factory.CodeService;
+import cc.ccoder.ufs.oss.api.request.GetObjectRequest;
 import cc.ccoder.ufs.oss.api.request.GetObjectUrlRequest;
 import cc.ccoder.ufs.oss.api.request.PutObjectRequest;
 import cc.ccoder.ufs.oss.api.response.GetObjectUrlResponse;
@@ -40,5 +41,15 @@ public interface OssService extends CodeService {
      *             exception during execution get object url
      */
     GetObjectUrlResponse getObjectUrl(GetObjectUrlRequest request, String bucketAccess) throws Exception;
+
+    /**
+     * get Object to callback
+     * 
+     * @param request
+     *            get object request
+     * @throws Exception
+     *             exception during execution get Object callback
+     */
+    void getObject(GetObjectRequest request) throws Exception;
 
 }
