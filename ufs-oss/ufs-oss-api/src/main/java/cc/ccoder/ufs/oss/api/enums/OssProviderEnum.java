@@ -10,26 +10,32 @@ import cc.ccoder.common.base.CodeEnum;
  *
  * @author congcong
  * @email cong.ccoder@gmail.com
- * @date OssProviderEnm.java v1.0 2021/11/1 17:25
+ * @date OssProviderEnum.java v1.0 2021/11/1 17:25
  */
-public enum OssProviderEnm implements CodeEnum {
+public enum OssProviderEnum implements CodeEnum {
     /**
      * Aliyun OSS Service
      */
-    ALIYUN("aliyun");
+    ALIYUN("aliyun"),
+
+    /**
+     * Qiniu OSS Service
+     */
+    QINIU("qiniu");
 
     private final String code;
 
+    @Override
     public String getCode() {
         return code;
     }
 
-    OssProviderEnm(String code) {
+    OssProviderEnum(String code) {
         this.code = code;
     }
 
-    public static OssProviderEnm getCode(String code) {
-        for (OssProviderEnm type : OssProviderEnm.values()) {
+    public static OssProviderEnum getCode(String code) {
+        for (OssProviderEnum type : OssProviderEnum.values()) {
             if (StringUtils.equalsIgnoreCase(type.getCode(), code)) {
                 return type;
             }

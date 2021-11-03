@@ -64,6 +64,12 @@
                 <artifactId>ufs-oss-aliyun</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>cc.ccoder.ufs</groupId>
+                <artifactId>ufs-oss-qiniu</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>cc.ccoder.ufs</groupId>
                 <artifactId>ufs-common</artifactId>

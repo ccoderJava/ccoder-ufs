@@ -2,6 +2,7 @@ package cc.ccoder.ufs.oss.api.request;
 
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.Map;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -52,6 +53,7 @@ public class GetObjectRequest implements Serializable {
     public static class CallbackContext {
         GetObjectRequest request;
         InputStream inputStream;
+        Map<String, String> metaData;
         String contentType;
         String contentDisposition;
     }

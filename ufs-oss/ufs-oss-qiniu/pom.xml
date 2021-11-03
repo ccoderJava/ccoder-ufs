@@ -3,17 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>cc.ccoder.ufs</groupId>
         <artifactId>ufs-oss</artifactId>
+        <groupId>cc.ccoder.ufs</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ufs-oss-qiniu</artifactId>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
-    <artifactId>ufs-oss-aliyun</artifactId>
-    <description>The aliyun module of ufs project</description>
-
+    <description>The qiniu cloud oss for the project</description>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -21,13 +20,17 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.aliyun.oss</groupId>
-            <artifactId>aliyun-sdk-oss</artifactId>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
         </dependency>
-
         <dependency>
             <groupId>cc.ccoder.ufs</groupId>
             <artifactId>ufs-oss-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.14.9</version>
         </dependency>
 
     </dependencies>

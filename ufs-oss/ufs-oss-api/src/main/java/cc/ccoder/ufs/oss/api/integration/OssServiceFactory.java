@@ -21,7 +21,7 @@ import cc.ccoder.ufs.oss.api.OssService;
 @Component
 public class OssServiceFactory extends AbstractCodeServiceFactory<OssService> {
 
-    @Value("{oss.provider}")
+    @Value("${oss.provider}")
     private String ossProvider;
 
     public OssServiceFactory(List<OssService> ossServices) {
@@ -31,7 +31,7 @@ public class OssServiceFactory extends AbstractCodeServiceFactory<OssService> {
     public OssService getService() {
         OssService ossService = getService(ossProvider);
         if (ossService == null) {
-            throw new ErrorException("Oss service provider configuration not exists");
+            throw new ErrorException(String.format("Oss service provider [%s] configuration not exists", ossProvider));
         }
         return ossService;
     }

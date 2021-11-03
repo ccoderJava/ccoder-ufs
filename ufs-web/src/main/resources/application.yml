@@ -7,9 +7,12 @@ server:
   port: 8080
 
 oss:
-  provider: aliyun
+  provider: qiniu
   aliyun:
     access-key-id: LTAIk84CQKnAtGyH
     access-key-secret: w032qOSZoAIYM5lijORUFINSJAHXpj
     endpoint: oss-cn-shanghai.aliyuncs.com
     internal-endpoint: oss-cn-shanghai-internal.aliyuncs.com
+  qiniu:
+    access-key-id: 272PgG661bmHdc53oQ5Ey3I00VKUyqX7GRQMA7EB
+    access-key-secret: fE58eRczI_kRkEg6NydTNORc2ELCJLmF7O2HY8Pe

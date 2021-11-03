@@ -22,6 +22,7 @@
     <modules>
         <module>ufs-oss-api</module>
         <module>ufs-oss-aliyun</module>
+        <module>ufs-oss-qiniu</module>
     </modules>
 
 </project>
