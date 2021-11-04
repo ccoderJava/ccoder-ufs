@@ -8,10 +8,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
-    <name>${project.artifactId}</name>
-    <artifactId>ufs-oss-api</artifactId>
-    <description>The aliyun oss module of ufs project</description>
+
+    <artifactId>ufs-oss-huawei</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -21,24 +19,12 @@
     <dependencies>
         <dependency>
             <groupId>cc.ccoder.ufs</groupId>
-            <artifactId>ufs-common</artifactId>
+            <artifactId>ufs-oss-api</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.huaweicloud</groupId>
+            <artifactId>esdk-obs-java-bundle</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-        </dependency>
-
     </dependencies>
 
 </project>

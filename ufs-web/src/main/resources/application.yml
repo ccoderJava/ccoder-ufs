@@ -7,7 +7,7 @@ server:
   port: 8080
 
 oss:
-  provider: qiniu
+  provider: huawei
   aliyun:
     access-key-id: LTAIk84CQKnAtGyH
     access-key-secret: w032qOSZoAIYM5lijORUFINSJAHXpj
@@ -16,3 +16,7 @@ oss:
   qiniu:
     access-key-id: 272PgG661bmHdc53oQ5Ey3I00VKUyqX7GRQMA7EB
     access-key-secret: fE58eRczI_kRkEg6NydTNORc2ELCJLmF7O2HY8Pe
+  huawei:
+    access-key-id: MJMOLPZYNND1HNYWK6LH
+    access-key-secret: x41hrVoGMnAyuhaJYW1SGBphjn0b4uyK6DlpSx5v
+    endpoint: obs.cn-east-3.myhuaweicloud.com
