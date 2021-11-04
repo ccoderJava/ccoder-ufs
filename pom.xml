@@ -36,6 +36,8 @@
         <aliyun-sdk-oss.version>3.10.2</aliyun-sdk-oss.version>
         <qiniu-java-sdk.version>7.7.0</qiniu-java-sdk.version>
         <esdk-obs-java-bundle.version>3.21.8</esdk-obs-java-bundle.version>
+        <okhttp.version>3.14.9</okhttp.version>
+        <fastjson.version>1.2.75</fastjson.version>
     </properties>
 
 
@@ -106,6 +108,18 @@
                 <groupId>com.huaweicloud</groupId>
                 <artifactId>esdk-obs-java-bundle</artifactId>
                 <version>${esdk-obs-java-bundle.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
 
             <dependency>
