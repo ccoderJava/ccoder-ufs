@@ -32,6 +32,10 @@
             <groupId>cc.ccoder.ufs</groupId>
             <artifactId>ufs-oss-qiniu</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cc.ccoder.ufs</groupId>
+            <artifactId>ufs-oss-huawei</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

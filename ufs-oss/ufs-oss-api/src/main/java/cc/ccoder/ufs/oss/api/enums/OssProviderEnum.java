@@ -21,7 +21,12 @@ public enum OssProviderEnum implements CodeEnum {
     /**
      * Qiniu OSS Service
      */
-    QINIU("qiniu");
+    QINIU("qiniu"),
+
+    /**
+     * Huawei OBS Service
+     */
+    HUAWEI("huawei");
 
     private final String code;
 

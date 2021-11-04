@@ -3,12 +3,14 @@ package cc.ccoder.ufs.oss.qiniu.integration;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.qiniu.http.Headers;
 import com.qiniu.http.Response;
@@ -126,10 +128,10 @@ public class QiniuOssServiceImpl implements OssService {
         if (!response.isSuccessful()) {
             throw new ErrorException(domainResponse);
         }
-        List domainList = JSONObject.parseObject(domainResponse, List.class);
-        if (domainList.isEmpty()) {
+        JSONArray objects = JSONObject.parseArray(domainResponse);
+        if (objects.isEmpty()) {
             throw new ErrorException("qiniu bucket domain empty");
         }
-        return domainList;
+        return new ArrayList<>(objects.toJavaList(String.class));
     }
 }

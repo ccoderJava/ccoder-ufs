@@ -8,12 +8,10 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
-import com.qiniu.http.Headers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.qiniu.util.Auth;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cc.ccoder.ufs.common.util.FileUtil;
 import cc.ccoder.ufs.oss.api.OssService;
@@ -55,7 +53,6 @@ public class TestUfsController {
         PutObjectRequest request = buildPutObjectRequest(bucketName);
         PutObjectResponse putObjectResponse = ossService.putObject(request);
         return "upload success";
-
     }
 
     @RequestMapping(value = "/{bucketName}/get/{ossPath}")
@@ -70,6 +67,7 @@ public class TestUfsController {
     }
 
     @RequestMapping(value = "/{bucketName}/down/{ossPath}")
+    @ResponseBody
     public String testCallback(@PathVariable(value = "bucketName") String bucketName,
         @PathVariable(value = "ossPath") String ossPath) throws Exception {
         GetObjectRequest request =
@@ -81,6 +79,8 @@ public class TestUfsController {
                         file.delete();
                     }
                     Files.copy(context.getInputStream(), Paths.get("down.txt"));
+                    Map<String, String> metaData = context.getMetaData();
+                    System.out.println(metaData);
                 }
             }).build();
         ossService.getObject(request);
