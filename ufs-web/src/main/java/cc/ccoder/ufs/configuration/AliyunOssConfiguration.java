@@ -18,10 +18,10 @@ import com.aliyun.oss.crypto.SimpleRSAEncryptionMaterials;
 import cc.ccoder.common.exception.ErrorException;
 import cc.ccoder.common.util.RsaUtil;
 import cc.ccoder.ufs.oss.api.domain.RsaKeyPair;
-import cc.ccoder.ufs.oss.factory.AliyunOssClientFactory;
-import cc.ccoder.ufs.oss.factory.AliyunOssClientFactoryImpl;
-import cc.ccoder.ufs.oss.properties.AliyunEncryptKeyProperties;
-import cc.ccoder.ufs.oss.properties.AliyunOssProperties;
+import cc.ccoder.ufs.oss.aliyun.factory.AliyunOssClientFactory;
+import cc.ccoder.ufs.oss.aliyun.factory.AliyunOssClientFactoryImpl;
+import cc.ccoder.ufs.oss.aliyun.properties.AliyunEncryptKeyProperties;
+import cc.ccoder.ufs.oss.aliyun.properties.AliyunOssProperties;
 import lombok.extern.slf4j.Slf4j;
 
 /**

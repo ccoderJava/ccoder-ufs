@@ -1,4 +1,4 @@
-package cc.ccoder.ufs.oss.factory;
+package cc.ccoder.ufs.oss.aliyun.factory;
 
 import com.aliyun.oss.OSS;
 

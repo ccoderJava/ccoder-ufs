@@ -1,4 +1,4 @@
-package cc.ccoder.ufs.oss.properties;
+package cc.ccoder.ufs.oss.aliyun.properties;
 
 import java.util.Map;
 

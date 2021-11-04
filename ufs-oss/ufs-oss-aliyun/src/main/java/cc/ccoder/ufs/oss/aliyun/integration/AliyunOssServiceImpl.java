@@ -1,9 +1,11 @@
-package cc.ccoder.ufs.oss.integration;
+package cc.ccoder.ufs.oss.aliyun.integration;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
@@ -14,15 +16,15 @@ import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectResult;
 
 import cc.ccoder.ufs.common.util.CaseFormatUtil;
+import cc.ccoder.ufs.oss.aliyun.factory.AliyunOssClientFactory;
 import cc.ccoder.ufs.oss.api.OssService;
 import cc.ccoder.ufs.oss.api.enums.BucketAccessEnum;
-import cc.ccoder.ufs.oss.api.enums.OssProviderEnm;
+import cc.ccoder.ufs.oss.api.enums.OssProviderEnum;
 import cc.ccoder.ufs.oss.api.request.GetObjectRequest;
 import cc.ccoder.ufs.oss.api.request.GetObjectUrlRequest;
 import cc.ccoder.ufs.oss.api.request.PutObjectRequest;
 import cc.ccoder.ufs.oss.api.response.GetObjectUrlResponse;
 import cc.ccoder.ufs.oss.api.response.PutObjectResponse;
-import cc.ccoder.ufs.oss.factory.AliyunOssClientFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -52,9 +54,8 @@ public class AliyunOssServiceImpl implements OssService {
         try (InputStream inputStream = new FileInputStream(request.getFile())) {
             ObjectMetadata objectMetadata = new ObjectMetadata();
             if (request.getMetaData() != null) {
-                request.getMetaData().forEach((key, value) -> {
-                    objectMetadata.addUserMetadata(CaseFormatUtil.fromLowerCamelToLowerHyphen(key), value);
-                });
+                request.getMetaData().forEach((key, value) -> objectMetadata
+                    .addUserMetadata(CaseFormatUtil.fromLowerCamelToLowerHyphen(key), value));
             }
             if (request.getForbidOverwrite() != null) {
                 objectMetadata.setHeader(HEADER_FORBID_OVERWRITE, request.getForbidOverwrite().toString());
@@ -100,6 +101,7 @@ public class AliyunOssServiceImpl implements OssService {
             context.setInputStream(ossObject.getObjectContent());
             context.setRequest(request);
             context.setContentType(objectMetadata.getContentType());
+            context.setMetaData(filterUserMetaData(objectMetadata.getUserMetadata()));
             context.setContentDisposition(objectMetadata.getContentDisposition());
             request.getCallback().process(context);
             log.info("aliyun oss getObject callback complete");
@@ -108,8 +110,20 @@ public class AliyunOssServiceImpl implements OssService {
         }
     }
 
+    private Map<String, String> filterUserMetaData(Map<String, String> userMetaData) {
+        if (userMetaData == null) {
+            return null;
+        }
+        Map<String, String> metaData = new HashMap<>();
+        userMetaData.forEach((key, value) -> {
+            String metaKey = CaseFormatUtil.fromLowerHyphenToLowerCamel(key);
+            metaData.put(metaKey, value);
+        });
+        return metaData;
+    }
+
     @Override
     public String getServiceCode() {
-        return OssProviderEnm.ALIYUN.getCode();
+        return OssProviderEnum.ALIYUN.getCode();
     }
 }

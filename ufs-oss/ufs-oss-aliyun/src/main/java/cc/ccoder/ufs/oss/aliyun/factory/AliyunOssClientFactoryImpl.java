@@ -1,4 +1,4 @@
-package cc.ccoder.ufs.oss.factory;
+package cc.ccoder.ufs.oss.aliyun.factory;
 
 import com.aliyun.oss.ClientBuilderConfiguration;
 import com.aliyun.oss.OSS;
@@ -8,8 +8,7 @@ import com.aliyun.oss.common.comm.Protocol;
 import com.aliyun.oss.crypto.SimpleRSAEncryptionMaterials;
 
 import cc.ccoder.common.exception.ErrorException;
-import cc.ccoder.ufs.oss.factory.AliyunOssClientFactory;
-import cc.ccoder.ufs.oss.properties.AliyunOssProperties;
+import cc.ccoder.ufs.oss.aliyun.properties.AliyunOssProperties;
 
 /**
  * <p>

@@ -1,4 +1,4 @@
-package cc.ccoder.ufs.oss.properties;
+package cc.ccoder.ufs.oss.qiniu.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,23 +11,16 @@ import javax.validation.constraints.NotBlank;
  *
  * @author congcong
  * @email cong.ccoder@gmail.com
- * @date AliyunProperties.java v1.0  2021/11/1 15:35
+ * @date QiniuOssProperties.java v1.0  2021/11/2 16:06
  */
 @Data
 @Validated
-@ConfigurationProperties("oss.aliyun")
-public class AliyunOssProperties {
+@ConfigurationProperties("oss.qiniu")
+public class QiniuOssProperties {
 
     @NotBlank
     private String accessKeyId;
 
     @NotBlank
     private String accessKeySecret;
-
-    @NotBlank
-    private String endpoint;
-
-    @NotBlank
-    private String internalEndpoint;
-
 }
