@@ -24,6 +24,7 @@
         <module>ufs-oss-aliyun</module>
         <module>ufs-oss-qiniu</module>
         <module>ufs-oss-huawei</module>
+             
     </modules>
 
 </project>
