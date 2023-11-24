@@ -38,6 +38,7 @@ public class ZipTask implements Runnable{
             log.info("star download file. bucket = [{}], fileKey = [{}]", this.bucket,this.fileKey);
         try {
             ZipResponse zipResponse = new ZipResponse();
+            this.collect.add(zipResponse);
             ossService = ossServiceFactory.getService();
             zipResponse.setFileKey(this.fileKey);
             // TODO: 2023/11/24 处理回调
