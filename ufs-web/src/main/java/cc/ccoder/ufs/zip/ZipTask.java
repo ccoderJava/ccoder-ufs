@@ -2,7 +2,6 @@ package cc.ccoder.ufs.zip;
 
 import cc.ccoder.ufs.oss.api.OssService;
 import cc.ccoder.ufs.oss.api.integration.OssServiceFactory;
-import cc.ccoder.ufs.oss.api.request.GetObjectRequest;
 import cc.ccoder.ufs.util.SpringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
