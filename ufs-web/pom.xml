@@ -36,6 +36,10 @@
             <groupId>cc.ccoder.ufs</groupId>
             <artifactId>ufs-oss-huawei</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
